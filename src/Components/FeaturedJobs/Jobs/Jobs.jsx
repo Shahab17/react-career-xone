@@ -1,14 +1,15 @@
 import PropTypes from 'prop-types'
 
-import { IoLocation  } from "react-icons/io5";
+import { IoLocation } from "react-icons/io5";
 import { AiOutlineDollar } from "react-icons/ai";
+import { Link } from 'react-router-dom';
 
 const Jobs = ({ jobsData }) => {
     // console.log(jobsData)
-    const { logo, job_title, company_name, remote_or_onsite, location, job_type, salary } = jobsData
+    const { id, logo, job_title, company_name, remote_or_onsite, location, job_type, salary } = jobsData
     return (
         <div className="card card-compact bg-cyan-50 shadow-lg mt-10">
-            <figure><img className='pt-4 ' src={logo}  /></figure>
+            <figure><img className='pt-4 ' src={logo} /></figure>
             <div className="card-body">
                 <h2 className="card-title">{job_title} </h2>
                 <p>{company_name} </p>
@@ -21,7 +22,7 @@ const Jobs = ({ jobsData }) => {
                     <h3 className='flex items-center text-base'><AiOutlineDollar className='text-lg mr-1'></AiOutlineDollar> {salary} </h3>
                 </div>
                 <div className="card-actions  mt-6">
-                    <button className="btn bg-gradient-to-r from-cyan-100 to-blue-600">View Details</button>
+                    <Link to={`/job/${id}`}><button className="btn bg-gradient-to-r from-cyan-100 to-blue-600">View Details</button></Link>
                 </div>
             </div>
         </div>
