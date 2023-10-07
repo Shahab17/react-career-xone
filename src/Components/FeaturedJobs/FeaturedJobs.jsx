@@ -6,6 +6,7 @@ import Jobs from "./Jobs/Jobs";
 const FeaturedJobs = () => {
 
     const [jobs, setJobs] = useState([])
+    const [showData, setShowData] = useState(4)
 
     useEffect(() => {
         fetch('jobs.json')
@@ -19,10 +20,14 @@ const FeaturedJobs = () => {
                 <h3 className="text-4xl">Featured Jobs: {jobs.length}</h3>
                 <p> Explore thousands of job opportunities with all the information you need. Its your future </p>
             </div>
-            <div className="grid grid-cols-2 gap-10">
+
+            <div className="grid px-5 md:grid-cols-2 gap-10">
                 {
-                    jobs.map((jobsInfo, idx) => <Jobs key={idx} jobsData={jobsInfo}></Jobs>)
+                    jobs.slice(0, showData).map((jobsInfo, idx) => <Jobs key={idx} jobsData={jobsInfo}></Jobs>)
                 }
+            </div>
+            <div className={`text-center mt-5 ${showData === jobs.length && 'hidden'} `}>
+                <button onClick={() => setShowData(jobs.length)} className="btn bg-gradient-to-r from-cyan-100 to-blue-600">Show All </button>
             </div>
         </div>
     );
