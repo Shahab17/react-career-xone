@@ -11,7 +11,7 @@ const Jobs = ({ jobsData }) => {
         <div className="card card-compact bg-cyan-50 shadow-lg mt-10">
             <figure><img className='pt-4 ' src={logo} /></figure>
             <div className="card-body">
-                <h2 className="card-title">{job_title} </h2>
+                <h2 className="text-lg lg:text-2xl font-semibold">{job_title} </h2>
                 <p>{company_name} </p>
                 <div className='my-4'>
                     <button className='py-2 px-4  border-2 rounded-md border-blue-300 mr-2 font-semibold '>{remote_or_onsite} </button>

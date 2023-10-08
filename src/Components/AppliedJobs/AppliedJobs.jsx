@@ -49,28 +49,29 @@ const AppliedJobs = () => {
 
     return (
         <div>
-            <div className="text-end">
-                <div className="dropdown">
-                    <label tabIndex={0} className="btn m-1 border-2 border-blue-400">Filter By</label>
-                    <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
+            <div className="text-end mt-12">
+                <div className="dropdown px-5">
+                    <label tabIndex={0} className="btn m-1 border-2  border-blue-400">Filter By</label>
+                    <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box">
                         <li onClick={() => handleDisplayJobs('all')}><a>All</a></li>
                         <li onClick={() => handleDisplayJobs('remote')}><a>Remote</a></li>
                         <li onClick={() => handleDisplayJobs('onsite')}><a>Onsite</a></li>
                     </ul>
                 </div>
             </div>
-            <div className="grid gap-6 mt-10">
+            <div className="grid gap-6 px-5 mt-6">
                 {
                     displayJobs.map(jobs =>
                         <div key={jobs.id}>
 
-                            <div className="grid items-center p-6 border rounded-md  ">
+                            <div className="grid items-center p-5 border rounded-md  ">
                                 <div className="flex-row md:flex justify-between items-center  ">
-                                    <div className="flex items-center gap-8">
+                                    <div className="flex-row lg:flex items-center gap-8">
                                         <img src={jobs.logo} className="max-w-sm rounded-lg shadow-2xl" />
-                                        <div className=" ">
+
+                                        <div className="mt-5 ">
                                             <div>
-                                                <h1 className="text-2xl  mb-2 font-extrabold">{jobs.job_title} </h1>
+                                                <h1 className=" lg:text-2xl  mb-2 font-extrabold">{jobs.job_title} </h1>
                                                 <p>{jobs.company_name} </p>
                                             </div>
                                             <div className='my-4'>
@@ -83,7 +84,7 @@ const AppliedJobs = () => {
                                             </div>
                                         </div>
                                     </div>
-                                    <div className="">
+                                    <div className="mt-5">
                                         <button className="btn bg-gradient-to-r from-cyan-100 to-blue-600  ">View Details</button>
                                     </div>
                                 </div>
