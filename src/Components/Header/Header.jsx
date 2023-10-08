@@ -24,7 +24,7 @@ const Header = () => {
 
                     </ul>
                 </div>
-                <a className="btn btn-ghost normal-case text-xl">CareerXone</a>
+                <a className="  normal-case text-xl">CareerXone</a>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
