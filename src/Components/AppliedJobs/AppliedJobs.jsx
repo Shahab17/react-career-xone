@@ -3,6 +3,7 @@ import { useLoaderData } from "react-router-dom";
 import { getStoredJobApplication } from "../Utility/LocalStorage";
 import { IoLocation } from "react-icons/io5";
 import { AiOutlineDollar } from "react-icons/ai";
+import { Helmet } from "react-helmet-async";
 
 
 const AppliedJobs = () => {
@@ -49,6 +50,10 @@ const AppliedJobs = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>CareerXone | Applied Jobs</title>
+            </Helmet>
+
             <div className="text-end mt-12">
                 <div className="dropdown px-5">
                     <label tabIndex={0} className="btn m-1 border-2  border-blue-400">Filter By</label>

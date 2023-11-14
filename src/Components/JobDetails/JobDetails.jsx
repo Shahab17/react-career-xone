@@ -5,6 +5,7 @@ import { BiBriefcase } from "react-icons/bi";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { saveJobApplication } from "../Utility/LocalStorage";
+import { Helmet } from "react-helmet-async";
 
 
 const JobDetails = () => {
@@ -22,6 +23,9 @@ const JobDetails = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>Job Details: {id}</title>
+            </Helmet>
             <h1 className="text-4xl text-center mt-10 font-bold">Job Details</h1>
             <div className="grid gap-5 md:grid-cols-4   my-32 px-5">
                 <div className="  md:col-span-3 space-y-6 ">
